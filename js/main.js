@@ -1,5 +1,6 @@
 let images = document.querySelector(".section")
 let main = document.querySelector(".main")
+let picture = document.querySelector(".picture")
 add()
 function add() {
     images.innerHTML =""
@@ -10,11 +11,6 @@ function add() {
 
         let card = document.createElement("div")
         card.classList.add("text-center", "text-warning")
-
-        // let img2 = document.createElement("img")
-        // img2.classList.add("col-6")
-        // img2.src = "../img/3-16 1header_img.png"
-        // img2.alt = "Picture"
 
         let img = document.createElement("img")
         img.src = item.img
@@ -36,11 +32,20 @@ function add() {
         images.appendChild(col)
     })
 }
+
+
 function almash(son) {
-    massiv_img[0].src = massiv_img[son].src
-    console.log(son);
-    add()  
+    // picture.src = massiv_img[son].src
+    
+    let img = picture.src
+    picture.src = massiv_img[son].src
+    massiv_img[son].src = img
+    
+    add()
 }
+
+
+
 run()
 function run() {
     main.innerHTML=""
